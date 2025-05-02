@@ -1,0 +1,19 @@
+.replit
+# Byte-compiled / optimized / DLL files
+__pycache__
+*.py[cod]
+*.so
+*.dll
+*.pyd
+
+# C extensions
+*.c
+*.h
+
+# Distribution / packaging
+.eggs
+*.egg-info
+dist
+build
+develop
+venv
