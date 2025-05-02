@@ -5,7 +5,8 @@ class NewCatch:
         self.contents = {}
         self.chances = chances
         for i in range(amount):
-            self.contents[self._catch()] += self.contents.get(self._catch(), 0)
+            caught = self._catch()
+            self.contents[caught] = self.contents.get(caught, 0) + 1
 
         
     def _catch(self):
