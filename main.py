@@ -10,7 +10,7 @@ class Purchase:
 class Game:
     fishing_gear_shop = [
             Purchase(fishing_gear.NoFishingGear(), 0.0),
-            Purchase(fishing_gear.WishDotComFishingRod(baits.NoBait()), 9.99),
+            Purchase(fishing_gear.WishDotComFishingRod(), 9.99),
         ]
     bait_shop = [
             Purchase(baits.NoBait(), 0.0),
