@@ -18,13 +18,23 @@ class NewCatch:
     
     def __str__(self):
         formatted_contents = [f"{fish}: {amount}" for fish, amount in self.contents.items() if fish != "nothing"]
-        return f"You caught:\n{"\n".join(formatted_contents)}" if formatted_contents else "Darn. You didn't catch anything. Womp Womp."
+        if not formatted_contents:
+            message = "Darn. You didn't catch anything. Womp Womp."
+        elif len(formatted_contents) == 1:
+            message = f"You caught a {list(self.contents.keys())[0]}"
+        else:
+            message = f"You caught:\n{"\n".join(formatted_contents)}"
+        return message
         
 class NoFishingGear:
     def __init__(self):
         self.chances = {"nothing": 100.0}  # placeholder, other classes will overwrite this when inheriting
-
         self.capacity = 0
 
     def cast(self) -> NewCatch:
-        return NewCatch(self.chances, self.capacity)  # TODO: this will be a NewCatch object, will be generated based on the chances dict
+        return NewCatch(self.chances, self.capacity)
+
+class WishDotComFishingRod(NoFishingGear):
+    def __init__(self):
+        self.chances = {"nothing": 46.0, "cod": 20.0, "tuna": 18.0, "salmon": 16.0}  # I do not know much about fish, feel free to pull request on github, with more realistic chances
+        self.capacity = 1
