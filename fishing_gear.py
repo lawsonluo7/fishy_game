@@ -10,7 +10,7 @@ class NoFishingGear:
 
   def cast(self) -> new_catch.NewCatch:
       if self.bait.weight <= self.max_bait_weight:
-          return new_catch.NewCatch(self.chances, self.fish_capacity)
+          return new_catch.NewCatch(self.bait, self.fish_capacity)
       else:
           return new_catch.NewCatch(NoBait(), 0)
 

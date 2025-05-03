@@ -56,7 +56,7 @@ def test_player_buy():
     player.buy(1)
     print(f"Got: {player.money}, Expected: 0.01")
     print("Testing player money after buying fishing rod")
-    print(f"Got: {player.fishing_gear.item}, Expected: {fishing_gear.WishDotComFishingRod()}")
+    print(f"Got: {player.fishing_gear.item}, Expected: {fishing_gear.WishDotComFishingRod(baits.NoBait())}")
     print("Testing player's fishing gear is WishDotComFishingRod")
 
 def test_player_sell_gear():
