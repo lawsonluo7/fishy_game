@@ -29,21 +29,21 @@ class Player:
     def buy(self, index: int) -> None:
         self.sell_fishing_gear()
         if self.money >= self.fishing_gear_shop[index].price:
-            self.money -= self.fishing_gear_shop[index].price
+            self.money = round(self.money - self.fishing_gear_shop[index].price, 2)
             self.fishing_gear = self.fishing_gear_shop[index]
 
     def sell_fishing_gear(self) -> None:
-        self.money += self.fishing_gear.price
+        self.money = round(self.money + self.fishing_gear.price, 2)
         self.fishing_gear = self.fishing_gear_shop[0]
 
     def buy_bait(self, index: int) -> None:
         self.sell_bait()
         if self.money >= self.bait_shop[index].price:
-            self.money -= self.bait_shop[index].price
+            self.money = round(self.money - self.bait_shop[index].price, 2)
             self.bait = self.bait_shop[index]
 
     def sell_bait(self) -> None:
-        self.money += self.bait.price
+        self.money = round(self.money + self.bait.price, 2)
         self.bait = self.bait_shop[0]
 
     def cast(self) -> new_catch.NewCatch:
