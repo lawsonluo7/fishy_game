@@ -1,6 +1,5 @@
 import new_catch
 import baits
-import new_catch
 
 class NoFishingGear:
   def __init__(self):
@@ -12,11 +11,10 @@ class NoFishingGear:
       if self.bait.weight <= self.max_bait_weight:
           return new_catch.NewCatch(self.bait, self.fish_capacity)
       else:
-          return new_catch.NewCatch(NoBait(), 0)
+          return new_catch.NewCatch(baits.NoBait(), 0)
 
-class WishDotComFishingRod(NoFishingGear):
-  def __init__(self, bait = baits.NoBait):
-      self.fish_capacity: int = 1
-      self.max_bait_weight: float = 0.8
-      self.bait = bait
-      
+class TemuFishingRod(NoFishingGear):
+    def __init__(self, bait = baits.NoBait()):
+        self.fish_capacity = 1
+        self.bait = bait
+        self.max_bait_weight = 0.8

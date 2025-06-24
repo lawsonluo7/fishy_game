@@ -1,4 +1,0 @@
-run = "python main.py"
-modules = ["python-base-3.13"]
-
-[nix]
